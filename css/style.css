@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  box-sizing: border-box; 
+  font-family: Roboto;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  display: flex;
+  min-height: 100vh; /*grootte ter waarde van 1% van de viewport. hier dus 100%*/
+/*  background: rgb(14,51,65);
+  background: radial-gradient(circle, rgba(14,51,65,1) 0%, rgba(12,19,23,1) 100%);*/
+}
+
+main {
+  display: flex;
+  flex: 1;
+}
+main > article {
+  flex: 1;
+  order: 1;/*volgorde van de items*/
+}
+
+nav>a{
+	font-size:14pt; 
+	color:white;
+}
+
+#flexContainer{
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+header, footer, article, nav, aside {
+  	padding: 1em;
+}
+
+header{
+	background-color: black;
+	height: 5em;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+
+@media only screen and (min-width: 568px) {
+
+}
+
+@media only screen and (min-width: 1024px) {
+
+}
+	
+@media only screen and (min-width: 1200px) {
+	
+    
+}
