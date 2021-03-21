@@ -36,7 +36,7 @@ getAPIdataMars();
 //  74a079d8f073aed89fe3791d4ba4d5a2 API WEATHER 
 
 function getAPIdataEarth(){
-	var requestEarth = 'https://api.openweathermap.org/data/2.5/weather?q=Cape Canaveral&appid=74a079d8f073aed89fe3791d4ba4d5a2';
+	var requestEarth = 'https://api.openweathermap.org/data/2.5/weather?q=Cape Canaveral&units=metric&appid=74a079d8f073aed89fe3791d4ba4d5a2';
 
 	fetch(requestEarth)
 
@@ -46,6 +46,8 @@ function getAPIdataEarth(){
 
 	.then(function(responseEarth){
 		console.log(responseEarth);
+		document.getElementById('tempEarth').innerHTML = responseEarth.main.temp +"C°";
+		document.getElementById('windEarth').innerHTML = responseEarth.wind.speed +"m/s";
 	});
 }	
 	
