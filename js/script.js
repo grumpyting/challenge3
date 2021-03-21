@@ -15,9 +15,14 @@ function getAPIdata() {
 	.then(function(response) {
 		// show full JSON object
 		console.log(response);
+		var marsResponse = response;
 		var weatherBoxMars = document.getElementById('weatherMars');
-		document.getElementById("weatherMars").innerHTML = weatherBoxMars;
-		//weatherBox.innerHTML = response;
+
+
+
+
+		//document.getElementById("weatherMars").innerHTML = marsResponse ;
+		//weatherBoxMars.innerHTML = response;
 		//weatherBox.innerHTML = response.weather[0].description;
 		//weatherBox.innerHTML = response.main.temp;
 
@@ -29,11 +34,6 @@ function getAPIdata() {
 
 // init data stream
 getAPIdata();
-
-
-
-
-
 
 /*
 function getAPIdata() {
@@ -63,13 +63,3 @@ function getAPIdata() {
 	});
 }
 */
-
-
-
-
-
-
-
-
-
-
