@@ -5,7 +5,9 @@
 		<title>SpaceX</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">	
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
-		<script type="text/javascript" src="js/script.js"></script>
+		<script src="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.js"></script>
+		<link href="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.css" rel="stylesheet" />
+		<script type="text/javascript" defer src="js/script.js"></script>
 	</head>
 	<body>
 		<header>
@@ -20,15 +22,16 @@
 					<h3 id="windEarth"></h3>
 					<h3 id="pressureEarth"></h3>
 				</article>
-				<article id="weatherBoxMars">
+<!-- 				<article id="weatherBoxMars">
 					<h1 id="landingZone">Elysium Planitia Mars</h1>
 					<h1 id="tempMars"></h1>
 					<h1 id="weatherMars"></h1>
 					<h2 id="sol"></h2>
 					<h3 id="windMars"></h3>
-					<h3 id="pressureMars"></h3>					
-				</article>
+					<h3 id="pressureMars"></h3>	
+				</article> -->
 			</div>
+		    <div id="map"></div>
 		</main>
 	</body>
 </html>

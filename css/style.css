@@ -4,6 +4,7 @@
   box-sizing: border-box; 
   font-family: Roboto;
 }
+
 body {
   display: flex;
   flex-direction: column;
@@ -17,10 +18,11 @@ body {
 main {
   display: flex;
   flex: 1;
+  flex-direction: column;
 }
 main > article {
   flex: 1;
-  order: 1;/*volgorde van de items*/
+  order: 1;
 }
 
 nav>a{
@@ -49,9 +51,14 @@ header{
 }
 
 #weatherBoxEarth{
-
+  width: 300px;
 }
 
+#map {
+  height: 50vh;
+  width: 90vw;
+  margin: 5px;
+}
 
 @media only screen and (min-width: 568px) {
 

@@ -1,6 +1,6 @@
-//4zZZS2w9bbRWXdUbcV0KSGqD9afgj4fxKb1e2naX API MARS
+//4zZZS2w9bbRWXdUbcV0KSGqD9afgj4fxKb1e2naX API NASA
 
-function getAPIdataMars() {
+/*function getAPIdataMars() {
 
 	// construct request
 	var requestMars = 'https://api.nasa.gov/insight_weather/?api_key=4zZZS2w9bbRWXdUbcV0KSGqD9afgj4fxKb1e2naX&feedtype=json&ver=1.0';
@@ -14,26 +14,12 @@ function getAPIdataMars() {
 	
 	// do something with response
 	.then(function(responseMars) {
-		// show full JSON object
-		sol_keys = responseMars["sol_keys"];
 		document.getElementById('tempMars').innerHTML = responseMars.PRE.av;
 		console.log(responseMars);
-		//var weatherBoxMars = document.getElementById('weatherMars');
-
-		//document.getElementById("weatherMars").innerHTML = marsResponse ;
-		//weatherBoxMars.innerHTML = response;
-		//weatherBox.innerHTML = response.weather[0].description;
-		//weatherBox.innerHTML = response.main.temp;
-
-		// var degC = Math.floor(response.main.temp - 273.15);
-		// var weatherBox = document.getElementById('weatherMars');
-		// weatherBox.innerHTML = degC + '&#176;C <br>';
 	});
 }
 
-getAPIdataMars();
-
-
+getAPIdataMars();*/
 
 
 //  74a079d8f073aed89fe3791d4ba4d5a2 API WEATHER 
@@ -61,51 +47,17 @@ getAPIdataEarth();
 function setDate() {
 var dateLZ = new Date()
 document.getElementById('dateLZ').innerHTML = dateLZ.getDate() + '/' + (dateLZ.getMonth()+1) +"/"+dateLZ.getFullYear();
-
-/*Hierboven worden de seconden omgerekend naar juiste format en vervolgens in graden van een cirkel omgezet*/
 }
 setInterval(setDate, 10);
 
 
+// pk.eyJ1IjoiMTgwMDIzMzEiLCJhIjoiY2s4azMzcjU3MDFtMTNnbjV0cGQ5YXlobSJ9.CDu9p874B9t_iK5mvo7yrw API MAPBOX
 
+// Set api token
+mapboxgl.accessToken = 'pk.eyJ1IjoiMTgwMDIzMzEiLCJhIjoiY2s4azMzcjU3MDFtMTNnbjV0cGQ5YXlobSJ9.CDu9p874B9t_iK5mvo7yrw';
 
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-function getAPIdata() {
-
-	// construct request
-	var request = 'https://api.openweathermap.org/data/2.5/weather?appid=b0c8dafa512a0134e90df6ece3c2b7a2&q=the%20Hague,nl';
-
-	// get current weather
-	fetch(request)	
-	
-	// parse response to JSON format
-	.then(function(response) {
-		if(!response.ok) throw Error(response.statusText);
-		return response.json();
-	})
-	
-	// do something with response
-	.then(function(response) {
-		// show full JSON object
-		console.log(response);
-		//document.getElementById('weather').innerHTML = response;
-		//document.getElementById('weather').innerHTML = response.weather[0].description;
-	})
-	// catch error
-	.catch(function (error) {
-		console.log('Request failed', error);
-	});
-}
-*/
+// Initialate map
+var map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/mapbox/streets-v11',
+});
