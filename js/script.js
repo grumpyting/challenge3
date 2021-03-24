@@ -1,4 +1,5 @@
-/*//4zZZS2w9bbRWXdUbcV0KSGqD9afgj4fxKb1e2naX API MARS
+//4zZZS2w9bbRWXdUbcV0KSGqD9afgj4fxKb1e2naX API MARS
+
 function getAPIdataMars() {
 
 	// construct request
@@ -14,6 +15,8 @@ function getAPIdataMars() {
 	// do something with response
 	.then(function(responseMars) {
 		// show full JSON object
+		sol_keys = responseMars["sol_keys"];
+		document.getElementById('tempMars').innerHTML = responseMars.PRE.av;
 		console.log(responseMars);
 		//var weatherBoxMars = document.getElementById('weatherMars');
 
@@ -29,7 +32,7 @@ function getAPIdataMars() {
 }
 
 getAPIdataMars();
-*/
+
 
 
 
@@ -46,16 +49,37 @@ function getAPIdataEarth(){
 
 	.then(function(responseEarth){
 		console.log(responseEarth);
-		document.getElementById('tempEarth').innerHTML = responseEarth.main.temp +"C°";
-		document.getElementById('windEarth').innerHTML = responseEarth.wind.speed +"m/s";
+		document.getElementById('tempEarth').innerHTML = responseEarth.main.temp +" C°";
+		document.getElementById('weatherEarth').innerHTML = responseEarth.weather[0].main;
+		document.getElementById('windEarth').innerHTML = responseEarth.wind.speed +" m/s";
+		document.getElementById('pressureEarth').innerHTML = responseEarth.main.pressure /100+ " Pa";
 	});
 }	
 	
 getAPIdataEarth();
 
+function setDate() {
+var dateLZ = new Date()
+document.getElementById('dateLZ').innerHTML = dateLZ.getDate() + '/' + (dateLZ.getMonth()+1) +"/"+dateLZ.getFullYear();
+
+/*Hierboven worden de seconden omgerekend naar juiste format en vervolgens in graden van een cirkel omgezet*/
+}
+setInterval(setDate, 10);
 
 
-// init data stream
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 function getAPIdata() {
