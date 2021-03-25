@@ -55,9 +55,7 @@ setInterval(setDate, 10);
 
 // Set api token
 mapboxgl.accessToken = 'pk.eyJ1IjoiMTgwMDIzMzEiLCJhIjoiY2s4azMzcjU3MDFtMTNnbjV0cGQ5YXlobSJ9.CDu9p874B9t_iK5mvo7yrw';
-
-// Initialate map
 var map = new mapboxgl.Map({
-  container: 'map',
-  style: 'mapbox://styles/mapbox/streets-v11',
+container: 'map',
+style: 'mapbox://styles/mapbox/streets-v11'
 });
