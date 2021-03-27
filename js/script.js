@@ -59,5 +59,22 @@ setInterval(setDate, 10);
       container: 'map',
       style: 'mapbox://styles/18002331/ckmqm2hms18is17o5cc04j7p9', // replace this with your style URL
       center: [ -81.379234, 28.538336],
-      zoom: 10.7
+      zoom: 11.7
+    });
+
+    map.on('click', function(e) {
+      var features = map.queryRenderedFeatures(e.point, {
+        layers: ['floridaParks'] // replace this with the name of the layer
+      });
+
+      if (!features.length) {
+        return;
+      }
+
+      var feature = features[0];
+
+      var popup = new mapboxgl.Popup({ offset: [0, -15] })
+        .setLngLat(feature.geometry.coordinates)
+        .setHTML('<h3>' + feature.properties.title + '</h3><p>' + feature.properties.description + '</p>')
+        .addTo(map);
     });
