@@ -54,8 +54,10 @@ setInterval(setDate, 10);
 // pk.eyJ1IjoiMTgwMDIzMzEiLCJhIjoiY2s4azMzcjU3MDFtMTNnbjV0cGQ5YXlobSJ9.CDu9p874B9t_iK5mvo7yrw API MAPBOX
 
 // Set api token
-mapboxgl.accessToken = 'pk.eyJ1IjoiMTgwMDIzMzEiLCJhIjoiY2s4azMzcjU3MDFtMTNnbjV0cGQ5YXlobSJ9.CDu9p874B9t_iK5mvo7yrw';
-var map = new mapboxgl.Map({
-container: 'map',
-style: 'mapbox://styles/mapbox/streets-v11'
-});
+    mapboxgl.accessToken = 'pk.eyJ1IjoiMTgwMDIzMzEiLCJhIjoiY2s4azMzcjU3MDFtMTNnbjV0cGQ5YXlobSJ9.CDu9p874B9t_iK5mvo7yrw'; // replace this with your access token
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/18002331/ckmqm2hms18is17o5cc04j7p9', // replace this with your style URL
+      center: [ -81.379234, 28.538336],
+      zoom: 10.7
+    });
