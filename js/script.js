@@ -2,20 +2,24 @@
 
 function getAPIdataMars() {
 
-	// construct request
 	var requestMars = 'https://api.nasa.gov/insight_weather/?api_key=4zZZS2w9bbRWXdUbcV0KSGqD9afgj4fxKb1e2naX&feedtype=json&ver=1.0';
-	// get current weather
 	fetch(requestMars)	
-	//fetch(requestEarth)
-	// parse response to JSON format
+
 	.then(function(responseMars) {
 		return responseMars.json();
 	})
 	
-	// do something with response
 	.then(function(responseMars) {
-		document.getElementById('tempMars').innerHTML = responseMars[828].PRE.av;
-		//console.log(responseMars);
+		//document.getElementById('tempMars').innerHTML = responseMars[828].AT.av +" °C";
+		// Temp sensoren zijn momenteel offline
+		document.getElementById('seasonMars').innerHTML = responseMars[828].Season;
+		//document.getElementById('windMars').innerHTML = responseMars[828].WD.most_common;
+		// Wind sensoren zijn momenteel offline	
+		document.getElementById('dateMars').innerHTML = responseMars[828].Last_UTC + ' Date of latest Mars data';
+
+		document.getElementById('pressureMars').innerHTML = responseMars[828].PRE.av + 'Pa';
+
+		console.log(responseMars);
 	});
 }
 
@@ -23,11 +27,6 @@ getAPIdataMars();
 
 
 //  74a079d8f073aed89fe3791d4ba4d5a2 API WEATHER 
-
-
-
-
-
 function getAPIdataEarth(){
 	var requestEarth = 'https://api.openweathermap.org/data/2.5/weather?q=Cape%20Canaveral&units=metric&appid=74a079d8f073aed89fe3791d4ba4d5a2';
 
@@ -39,7 +38,7 @@ function getAPIdataEarth(){
 
 	.then(function(responseEarth){
 		console.log(responseEarth);
-		document.getElementById('tempEarth').innerHTML = responseEarth.main.temp +" C°";
+		document.getElementById('tempEarth').innerHTML = responseEarth.main.temp +" °C";
 		document.getElementById('weatherEarth').innerHTML = responseEarth.weather[0].main;
 		document.getElementById('windEarth').innerHTML = responseEarth.wind.speed +" m/s";
 		document.getElementById('pressureEarth').innerHTML = responseEarth.main.pressure /100+ " Pa";

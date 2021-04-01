@@ -54,12 +54,11 @@ header{
 #weatherBoxEarth > div{
   flex-direction: row;
 }
-
-#rowOne{
+.rowOne{
   margin: 15px 5px 10px 10px;
 }
 
-#rowTwo{
+.rowTwo{
   margin: 5px 5px 5px 10px;
 }
 
