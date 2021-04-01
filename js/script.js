@@ -1,6 +1,6 @@
 //4zZZS2w9bbRWXdUbcV0KSGqD9afgj4fxKb1e2naX API NASA
 
-/*function getAPIdataMars() {
+function getAPIdataMars() {
 
 	// construct request
 	var requestMars = 'https://api.nasa.gov/insight_weather/?api_key=4zZZS2w9bbRWXdUbcV0KSGqD9afgj4fxKb1e2naX&feedtype=json&ver=1.0';
@@ -14,18 +14,22 @@
 	
 	// do something with response
 	.then(function(responseMars) {
-		document.getElementById('tempMars').innerHTML = responseMars.PRE.av;
-		console.log(responseMars);
+		document.getElementById('tempMars').innerHTML = responseMars[828].PRE.av;
+		//console.log(responseMars);
 	});
 }
 
-getAPIdataMars();*/
+getAPIdataMars();
 
 
 //  74a079d8f073aed89fe3791d4ba4d5a2 API WEATHER 
 
+
+
+
+
 function getAPIdataEarth(){
-	var requestEarth = 'https://api.openweathermap.org/data/2.5/weather?q=Cape Canaveral&units=metric&appid=74a079d8f073aed89fe3791d4ba4d5a2';
+	var requestEarth = 'https://api.openweathermap.org/data/2.5/weather?q=Cape%20Canaveral&units=metric&appid=74a079d8f073aed89fe3791d4ba4d5a2';
 
 	fetch(requestEarth)
 
@@ -54,11 +58,11 @@ setInterval(setDate, 10);
 // pk.eyJ1IjoiMTgwMDIzMzEiLCJhIjoiY2s4azMzcjU3MDFtMTNnbjV0cGQ5YXlobSJ9.CDu9p874B9t_iK5mvo7yrw API MAPBOX
 
 // Set api token
-    mapboxgl.accessToken = 'pk.eyJ1IjoiMTgwMDIzMzEiLCJhIjoiY2s4azMzcjU3MDFtMTNnbjV0cGQ5YXlobSJ9.CDu9p874B9t_iK5mvo7yrw'; // replace this with your access token
+/*    mapboxgl.accessToken = 'pk.eyJ1IjoiMTgwMDIzMzEiLCJhIjoiY2s4azMzcjU3MDFtMTNnbjV0cGQ5YXlobSJ9.CDu9p874B9t_iK5mvo7yrw'; // replace this with your access token
     var map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/18002331/ckmqm2hms18is17o5cc04j7p9', // replace this with your style URL
-      center: [ -81.379234, 28.538336],
+      center: [-81.379234, 28.538336],
       zoom: 11.7
     });
 
@@ -66,15 +70,50 @@ setInterval(setDate, 10);
       var features = map.queryRenderedFeatures(e.point, {
         layers: ['floridaParks'] // replace this with the name of the layer
       });
+      var feature = features[0];
 
       if (!features.length) {
         return;
       }
 
-      var feature = features[0];
 
       var popup = new mapboxgl.Popup({ offset: [0, -15] })
         .setLngLat(feature.geometry.coordinates)
         .setHTML('<h3>' + feature.properties.title + '</h3><p>' + feature.properties.description + '</p>')
         .addTo(map);
-    });
+    }); 
+
+*/
+
+      mapboxgl.accessToken = 'pk.eyJ1IjoiMTgwMDIzMzEiLCJhIjoiY2s4azMzcjU3MDFtMTNnbjV0cGQ5YXlobSJ9.CDu9p874B9t_iK5mvo7yrw';
+      var map = new mapboxgl.Map({
+        container: 'map', // container id
+        style: 'mapbox://styles/18002331/ckmqm2hms18is17o5cc04j7p9', // stylesheet location
+        center: [-81.379234, 28.538336],
+        zoom: 11.0
+      });
+
+      map.on('click', function (e) {
+        var features = map.queryRenderedFeatures(e.point, {
+          layers: ['floridaParks','floridaFood']  // replace this with the name of the layer
+        });
+
+        if (!features.length) {
+          return;
+        }
+
+        var feature = features[0];
+
+        var popup = new mapboxgl.Popup({ offset: [0, -15] })
+          .setLngLat(feature.geometry.coordinates)
+          .setHTML(
+            '<h3>' +
+              feature.properties.title +
+              '</h3><p>' +
+              feature.properties.description +
+              '</p>'
+          )
+          .setLngLat(feature.geometry.coordinates)
+          .addTo(map);
+      });
+    

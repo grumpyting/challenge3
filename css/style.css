@@ -9,6 +9,7 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
+  justify-content: center;
   display: flex;
   min-height: 100vh; /*grootte ter waarde van 1% van de viewport. hier dus 100%*/
 /*  background: rgb(14,51,65);
@@ -20,15 +21,6 @@ main {
   flex: 1;
   flex-direction: column;
 }
-main > article {
-  flex: 1;
-  order: 1;
-}
-
-nav>a{
-	font-size:14pt; 
-	color:white;
-}
 
 #flexContainer{
   display: flex;
@@ -36,29 +28,69 @@ nav>a{
   padding: 0;
 }
 
-header, footer, article, nav, aside {
-  	padding: 1em;
-}
-
 header{
 	background-color: black;
-	height: 5em;
+	height: 2em;
 	width: 100%;
 }
 
+#logo{
+  max-height: 45%;
+  margin: 5px 0px 5px 25px;
+}
+
 #weatherBoxes{
-  flex-direction: column;
+  
 }
 
 #weatherBoxEarth{
-  width: 300px;
+  width: 100%;
+  background-image: url("space.jpg");
+  background-size: cover;
+  padding: 10px;
+  margin-top: 25px;
+}
+
+#weatherBoxEarth > div{
+  flex-direction: row;
+}
+
+#rowOne{
+  margin: 15px 5px 10px 10px;
+}
+
+#rowTwo{
+  margin: 5px 5px 5px 10px;
+}
+
+
+h1,h2,h3{
+  margin: 0;
+  padding: 0;
+}
+
+h1{
+  font-size: 16pt;
+}
+
+h2{
+  font-size: 14pt;
+}
+h3{
+  font-size: 10pt;
+}
+
+#mapWrapper{
+  margin: auto;
 }
 
 #map {
-  height: 60vh;
-  width: 90vw;
-  margin: 5px;
+  height: 45vh;
+  width: 100%;
+  margin-top: 5px;
 }
+
+
 
 @media only screen and (min-width: 568px) {
 
