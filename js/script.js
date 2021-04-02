@@ -15,7 +15,7 @@ function getAPIdataMars() {
 		document.getElementById('seasonMars').innerHTML = responseMars[828].Season;
 		//document.getElementById('windMars').innerHTML = responseMars[828].WD.most_common + '';
 		// Wind sensoren zijn momenteel offline	
-		document.getElementById('dateMars').innerHTML = responseMars[828].Last_UTC + ' Date of latest Mars data';
+		document.getElementById('dateMars').innerHTML = responseMars[828].Last_UTC + ' *';
 
 		document.getElementById('pressureMars').innerHTML = responseMars[828].PRE.av + 'Pa';
 
@@ -94,7 +94,7 @@ setInterval(setDate, 10);
 
       map.on('click', function (e) {
         var features = map.queryRenderedFeatures(e.point, {
-          layers: ['floridaParks','floridaFood']  // replace this with the name of the layer
+          layers: ['floridaFood']  // replace this with the name of the layer
         });
 
         if (!features.length) {
@@ -107,10 +107,32 @@ setInterval(setDate, 10);
           .setLngLat(feature.geometry.coordinates)
           .setHTML(
             '<h3>' +
-              feature.properties.title +
-              '</h3><p>' +
-              feature.properties.description +
-              '</p>'
+              feature.properties.food + 
+            '</h3>'	
+          )
+          .setLngLat(feature.geometry.coordinates)
+          .addTo(map);
+      });
+    
+
+
+      map.on('click', function (f) {
+        var features = map.queryRenderedFeatures(f.point, {
+          layers: ['floridaParks']  // replace this with the name of the layer
+        });
+
+        if (!features.length) {
+          return;
+        }
+
+        var feature = features[0];
+
+        var popup = new mapboxgl.Popup({ offset: [0, -15] })
+          .setLngLat(feature.geometry.coordinates)
+          .setHTML(
+            '<h3>' +
+              feature.properties.park + 
+            '</h3>'	
           )
           .setLngLat(feature.geometry.coordinates)
           .addTo(map);
