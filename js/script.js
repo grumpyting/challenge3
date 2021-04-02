@@ -10,10 +10,10 @@ function getAPIdataMars() {
 	})
 	
 	.then(function(responseMars) {
-		//document.getElementById('tempMars').innerHTML = responseMars[828].AT.av +" °C";
+		//document.getElementById('tempMars').innerHTML = responseMars[828].AT.av + "&#176C";
 		// Temp sensoren zijn momenteel offline
 		document.getElementById('seasonMars').innerHTML = responseMars[828].Season;
-		//document.getElementById('windMars').innerHTML = responseMars[828].WD.most_common;
+		//document.getElementById('windMars').innerHTML = responseMars[828].WD.most_common + '';
 		// Wind sensoren zijn momenteel offline	
 		document.getElementById('dateMars').innerHTML = responseMars[828].Last_UTC + ' Date of latest Mars data';
 
