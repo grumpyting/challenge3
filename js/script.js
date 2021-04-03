@@ -8,17 +8,16 @@ function getAPIdataMars() {
 	.then(function(responseMars) {
 		return responseMars.json();
 	})
-	
+
 	.then(function(responseMars) {
-		//document.getElementById('tempMars').innerHTML = responseMars[828].AT.av + "&#176C";
+		//document.getElementById('tempMars').innerHTML = responseMars[832].AT.av + "&#176C";
 		// Temp sensoren zijn momenteel offline
-		document.getElementById('seasonMars').innerHTML = responseMars[828].Season;
-		//document.getElementById('windMars').innerHTML = responseMars[828].WD.most_common + '';
+		document.getElementById('seasonMars').innerHTML = responseMars[832].Season;
+		//document.getElementById('windMars').innerHTML = responseMars.[832].WD.most_common + '';
 		// Wind sensoren zijn momenteel offline	
-		document.getElementById('dateMars').innerHTML = responseMars[828].Last_UTC + ' *';
+		document.getElementById('dateMars').innerHTML = responseMars[832].Last_UTC + ' *';
 
-		document.getElementById('pressureMars').innerHTML = responseMars[828].PRE.av + 'Pa';
-
+		//document.getElementById('pressureMars').innerHTML = responseMars[832].PRE.av + ' Pa';
 		console.log(responseMars);
 	});
 }
