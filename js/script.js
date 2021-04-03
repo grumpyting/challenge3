@@ -49,7 +49,7 @@ getAPIdataEarth();
 
 function setDate() {
 var dateLZ = new Date()
-document.getElementById('dateLZ').innerHTML = dateLZ.getDate() + '/' + (dateLZ.getMonth()+1) +"/"+dateLZ.getFullYear();
+document.getElementById('dateLZ').innerHTML = dateLZ.getDate() + '-' + (dateLZ.getMonth()+1) +"-"+dateLZ.getFullYear();
 }
 setInterval(setDate, 10);
 
