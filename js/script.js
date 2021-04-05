@@ -3,6 +3,7 @@
 function getAPIdataMars() {
 
 	var requestMars = 'https://api.nasa.gov/insight_weather/?api_key=4zZZS2w9bbRWXdUbcV0KSGqD9afgj4fxKb1e2naX&feedtype=json&ver=1.0';
+	//var sol = sol_keys[0];
 	fetch(requestMars)	
 
 	.then(function(responseMars) {
@@ -10,15 +11,17 @@ function getAPIdataMars() {
 	})
 
 	.then(function(responseMars) {
-		//document.getElementById('tempMars').innerHTML = responseMars[832].AT.av + "&#176C";
-		// Temp sensoren zijn momenteel offline
-		document.getElementById('seasonMars').innerHTML = responseMars[832].Season;
-		//document.getElementById('windMars').innerHTML = responseMars.[832].WD.most_common + '';
-		// Wind sensoren zijn momenteel offline	
-		document.getElementById('dateMars').innerHTML = responseMars[832].Last_UTC + ' *';
+		var sol = responseMars.sol_keys[0];
 
-		//document.getElementById('pressureMars').innerHTML = responseMars[832].PRE.av + ' Pa';
-		console.log(responseMars);
+		//document.getElementById('tempMars').innerHTML = responseMars[sol].AT.av + "&#176C";
+		// Temp sensoren zijn momenteel offline
+		document.getElementById('seasonMars').innerHTML = responseMars[sol].Season;
+		//document.getElementById('windMars').innerHTML = responseMars.[sol].WD.most_common + '';
+		// Wind sensoren zijn momenteel offline	
+		document.getElementById('dateMars').innerHTML = responseMars[sol].Last_UTC + ' *';
+
+		document.getElementById('pressureMars').innerHTML = responseMars[sol].PRE.av + ' Pa';
+		console.log(responseMars.sol_keys[0]);
 	});
 }
 
@@ -48,7 +51,7 @@ getAPIdataEarth();
 
 function setDate() {
 var dateLZ = new Date()
-document.getElementById('dateLZ').innerHTML = dateLZ.getDate() + '-' + (dateLZ.getMonth()+1) +"-"+dateLZ.getFullYear();
+document.getElementById('dateLZ').innerHTML = dateLZ.getFullYear() +'-' + (dateLZ.getMonth()+1) + '-' + dateLZ.getDate();
 }
 setInterval(setDate, 10);
 

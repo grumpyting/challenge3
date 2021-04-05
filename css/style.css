@@ -21,8 +21,7 @@ main {
 }
 
 #flexContainer{
-  display: flex;
-  flex-direction: column;
+ 
   padding: 0;
 }
 
@@ -40,6 +39,8 @@ header{
 #weatherBoxes{
   color: #ffffff;
   -webkit-text-stroke: 0.2px black;
+  display: flex;
+  flex-direction: column;
 
 }
 
@@ -117,12 +118,13 @@ p{
 }
 
 @media only screen and (min-width: 568px) {
+
 #weatherBoxEarth, #weatherBoxMars{
   width: 82%;
   height: 25vh;
   padding: 5px;
   margin: auto;
-  margin-top: 25px;
+  margin: 25px 20px 20px 20px;
   border-radius: 5px;
   box-shadow: 8px 8px 5px -5px rgba(0,0,0,0.35);
 }
@@ -157,7 +159,34 @@ p{
   font-size: 25pt;
 }
 @media only screen and (min-width: 1024px) {
+  #weatherBoxes{
+    display: flex;
+    flex-direction: row;
+  }
+#map {
+  height: 50vh;
+  width: 100%;
+  margin-top: 5px;
+}
+#welcome{
+  margin-top: 5px;
+  font-size: 29pt;
+}
+h1{
+  font-size: 24pt;
+}
 
+h2{
+  font-size: 20pt;
+}
+
+h3{
+  font-size: 18pt;
+}
+
+p{
+  font-size: 12pt;
+}
 }
 	
 @media only screen and (min-width: 1200px) {
