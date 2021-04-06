@@ -3,7 +3,6 @@
 function getAPIdataMars() {
 
 	var requestMars = 'https://api.nasa.gov/insight_weather/?api_key=4zZZS2w9bbRWXdUbcV0KSGqD9afgj4fxKb1e2naX&feedtype=json&ver=1.0';
-	//var sol = sol_keys[0];
 	fetch(requestMars)	
 
 	.then(function(responseMars) {
@@ -21,7 +20,7 @@ function getAPIdataMars() {
 		document.getElementById('dateMars').innerHTML = responseMars[sol].Last_UTC + ' *';
 
 		document.getElementById('pressureMars').innerHTML = responseMars[sol].PRE.av + ' Pa';
-		console.log(responseMars.sol_keys[0]);
+		//console.log(responseMars.sol_keys[0]);
 	});
 }
 
@@ -57,34 +56,6 @@ setInterval(setDate, 10);
 
 
 // pk.eyJ1IjoiMTgwMDIzMzEiLCJhIjoiY2s4azMzcjU3MDFtMTNnbjV0cGQ5YXlobSJ9.CDu9p874B9t_iK5mvo7yrw API MAPBOX
-
-// Set api token
-/*    mapboxgl.accessToken = 'pk.eyJ1IjoiMTgwMDIzMzEiLCJhIjoiY2s4azMzcjU3MDFtMTNnbjV0cGQ5YXlobSJ9.CDu9p874B9t_iK5mvo7yrw'; // replace this with your access token
-    var map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/18002331/ckmqm2hms18is17o5cc04j7p9', // replace this with your style URL
-      center: [-81.379234, 28.538336],
-      zoom: 11.7
-    });
-
-    map.on('click', function(e) {
-      var features = map.queryRenderedFeatures(e.point, {
-        layers: ['floridaParks'] // replace this with the name of the layer
-      });
-      var feature = features[0];
-
-      if (!features.length) {
-        return;
-      }
-
-
-      var popup = new mapboxgl.Popup({ offset: [0, -15] })
-        .setLngLat(feature.geometry.coordinates)
-        .setHTML('<h3>' + feature.properties.title + '</h3><p>' + feature.properties.description + '</p>')
-        .addTo(map);
-    }); 
-
-*/
 
       mapboxgl.accessToken = 'pk.eyJ1IjoiMTgwMDIzMzEiLCJhIjoiY2s4azMzcjU3MDFtMTNnbjV0cGQ5YXlobSJ9.CDu9p874B9t_iK5mvo7yrw';
       var map = new mapboxgl.Map({

@@ -86,24 +86,28 @@ h1,h2,h3,p{
 }
 
 h1{
-  font-size: 17pt;
+  font-size: 18pt;
 }
 
 h2{
-  font-size: 14pt;
+  font-size: 15pt;
 }
 
 h3{
-  font-size: 12pt;
+  font-size: 13pt;
 }
 
 p{
-  font-size: 6pt;
+  font-size: 7pt;
 }
 
 #mapWrapper{
   margin: auto;
   margin: 20px 20px 20px 20px;
+}
+
+#mapWrapper > h1{
+    text-align: center;
 }
 
 #map {
@@ -117,13 +121,13 @@ p{
   margin: auto;
 }
 
+
 @media only screen and (min-width: 568px) {
 
 #weatherBoxEarth, #weatherBoxMars{
-  width: 82%;
-  height: 25vh;
+  width: 90%;
+  height: 26vh;
   padding: 5px;
-  margin: auto;
   margin: 25px 20px 20px 20px;
   border-radius: 5px;
   box-shadow: 8px 8px 5px -5px rgba(0,0,0,0.35);
