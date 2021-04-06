@@ -33,7 +33,7 @@ header{
 
 #logo{
   max-height: 45%;
-  margin: 5px 0px 5px 15px;
+  margin: 10px 0px 5px 15px;
 }
 
 #weatherBoxes{
@@ -98,7 +98,7 @@ h3{
 }
 
 p{
-  font-size: 7pt;
+  font-size: 9pt;
 }
 
 #mapWrapper{
@@ -143,57 +143,88 @@ p{
 
 
 h1{
-  font-size: 21pt;
+  font-size: 23pt;
 }
 
 h2{
-  font-size: 17pt;
+  font-size: 18pt;
 }
 
 h3{
-  font-size: 15pt;
+  font-size: 16pt;
 }
 
 p{
-  font-size: 8pt;
+  font-size: 13pt;
 }
 
 #welcome{
   margin-top: 5px;
-  font-size: 25pt;
+  font-size: 27pt;
 }
+
+header{
+  height: 3em;
+}
+
 @media only screen and (min-width: 1024px) {
   #weatherBoxes{
     display: flex;
     flex-direction: row;
   }
+#weatherBoxEarth, #weatherBoxMars{
+  width: 90%;
+  height: 26vh;
+  padding: 5px;   
+}
+
 #map {
   height: 50vh;
   width: 100%;
   margin-top: 5px;
 }
-#welcome{
-  margin-top: 5px;
-  font-size: 29pt;
-}
+
 h1{
-  font-size: 24pt;
+  font-size: 26pt;
 }
 
 h2{
-  font-size: 20pt;
+  font-size: 23pt;
 }
 
 h3{
-  font-size: 18pt;
+  font-size: 20pt;
 }
 
 p{
-  font-size: 12pt;
+  font-size: 16pt;
+}
+#welcome,#mapWrapper > h1 {
+  font-size: 30pt;
 }
 }
 	
 @media only screen and (min-width: 1200px) {
-	
+	header{
+  height: 4em;
+}
+.rowTwo{
+  margin: 30px 5px 5px 10px;
+}
     
+h1{
+  font-size: 28pt;
+}
+
+h2{
+  font-size: 25pt;
+}
+
+h3{
+  font-size: 22pt;
+}
+
+p{
+  font-size: 17pt;
+}
 }
