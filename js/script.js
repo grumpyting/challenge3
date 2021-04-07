@@ -19,7 +19,7 @@ function getAPIdataMars() {
 		// Temp sensoren zijn momenteel offline. In de HTML staat nu een placeholder
 		
 		document.getElementById('seasonMars').innerHTML = responseMars[sol].Season;
-		//document.getElementById('windMars').innerHTML = responseMars.[sol].WD.most_common + '';
+		//document.getElementById('windMars').innerHTML = responseMars.[sol].WD.most_common;
 		// Wind sensoren zijn momenteel offline. In de HTML staat nu een placeholder
 		
 		document.getElementById('dateMars').innerHTML = responseMars[sol].Last_UTC + ' *';
