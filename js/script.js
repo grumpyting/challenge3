@@ -17,12 +17,15 @@ function getAPIdataMars() {
 
 		//document.getElementById('tempMars').innerHTML = responseMars[sol].AT.av + "&#176C";
 		// Temp sensoren zijn momenteel offline. In de HTML staat nu een placeholder
+		
 		document.getElementById('seasonMars').innerHTML = responseMars[sol].Season;
 		//document.getElementById('windMars').innerHTML = responseMars.[sol].WD.most_common + '';
 		// Wind sensoren zijn momenteel offline. In de HTML staat nu een placeholder
+		
 		document.getElementById('dateMars').innerHTML = responseMars[sol].Last_UTC + ' *';
 
 		document.getElementById('pressureMars').innerHTML = responseMars[sol].PRE.av + ' Pa';
+		
 		//console.log(responseMars);
 		// test om de response te checken
 	});
@@ -68,10 +71,13 @@ setInterval(setDate, 10);
         center: [-81.379234, 28.538336],
         zoom: 11.0
       });
+      // Pak de style en API van MAPBOX, Center is de coordinaten van Orlando Florida
+
+
 
       map.on('click', function (e) {
         var features = map.queryRenderedFeatures(e.point, {
-          layers: ['floridaFood']  // replace this with the name of the layer
+          layers: ['floridaFood']
         });
 
         if (!features.length) {
@@ -90,12 +96,14 @@ setInterval(setDate, 10);
           .setLngLat(feature.geometry.coordinates)
           .addTo(map);
       });
+
+      // Wanneer je klikt op een marker van FOOD, geef dan een popup met de info die in de dataset zit van MAPBOX. Dit geval naam van het restaurant.
     
 
 
       map.on('click', function (f) {
         var features = map.queryRenderedFeatures(f.point, {
-          layers: ['floridaParks']  // replace this with the name of the layer
+          layers: ['floridaParks']
         });
 
         if (!features.length) {
@@ -115,3 +123,4 @@ setInterval(setDate, 10);
           .addTo(map);
       });
     
+          // Wanneer je klikt op een marker van Parks, geef dan een popup met de info die in de dataset zit van MAPBOX. Dit geval naam van het pretpark.
