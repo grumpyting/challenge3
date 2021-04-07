@@ -1,5 +1,8 @@
 //4zZZS2w9bbRWXdUbcV0KSGqD9afgj4fxKb1e2naX API NASA
-
+/*
+	Momenteel zijn er een aantal sensoren van Insight weatherstation offline. 
+	Hier meer info. https://mars.nasa.gov/insight/weather/ 
+*/
 function getAPIdataMars() {
 
 	var requestMars = 'https://api.nasa.gov/insight_weather/?api_key=4zZZS2w9bbRWXdUbcV0KSGqD9afgj4fxKb1e2naX&feedtype=json&ver=1.0';
@@ -13,14 +16,15 @@ function getAPIdataMars() {
 		var sol = responseMars.sol_keys[0];
 
 		//document.getElementById('tempMars').innerHTML = responseMars[sol].AT.av + "&#176C";
-		// Temp sensoren zijn momenteel offline
+		// Temp sensoren zijn momenteel offline. In de HTML staat nu een placeholder
 		document.getElementById('seasonMars').innerHTML = responseMars[sol].Season;
 		//document.getElementById('windMars').innerHTML = responseMars.[sol].WD.most_common + '';
-		// Wind sensoren zijn momenteel offline	
+		// Wind sensoren zijn momenteel offline. In de HTML staat nu een placeholder
 		document.getElementById('dateMars').innerHTML = responseMars[sol].Last_UTC + ' *';
 
 		document.getElementById('pressureMars').innerHTML = responseMars[sol].PRE.av + ' Pa';
-		//console.log(responseMars.sol_keys[0]);
+		//console.log(responseMars);
+		// test om de response te checken
 	});
 }
 

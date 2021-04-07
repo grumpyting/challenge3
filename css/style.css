@@ -48,7 +48,7 @@ header{
   width: 100%;
   height: 21.5vh;
   padding: 5px;
-  margin-top: 20px;
+  
 
 }
 
@@ -59,6 +59,7 @@ header{
     ),
     url("../img/earth.jpg");
   background-size: cover;
+
 }
 
 #weatherBoxMars{
@@ -68,6 +69,7 @@ header{
     ),
     url("../img/mars.jpg");
   background-size: cover;
+  margin-top: 20px;
 }
 
 .rowOne{
@@ -126,9 +128,9 @@ p{
 
 #weatherBoxEarth, #weatherBoxMars{
   width: 90%;
-  height: 26vh;
+  height: 28vh;
   padding: 5px;
-  margin: 25px 20px 20px 20px;
+  margin: 10px 20px 20px 20px;
   border-radius: 5px;
   box-shadow: 8px 8px 5px -5px rgba(0,0,0,0.35);
 }
@@ -143,7 +145,7 @@ p{
 
 
 h1{
-  font-size: 23pt;
+  font-size: 20pt;
 }
 
 h2{
@@ -151,20 +153,16 @@ h2{
 }
 
 h3{
-  font-size: 16pt;
+  font-size: 14pt;
 }
 
 p{
-  font-size: 13pt;
+  font-size: 10pt;
 }
 
 #welcome{
   margin-top: 5px;
   font-size: 27pt;
-}
-
-header{
-  height: 3em;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -174,7 +172,7 @@ header{
   }
 #weatherBoxEarth, #weatherBoxMars{
   width: 90%;
-  height: 26vh;
+  height: 28vh;
   padding: 5px;   
 }
 
@@ -185,15 +183,15 @@ header{
 }
 
 h1{
-  font-size: 26pt;
+  font-size: 22pt;
 }
 
 h2{
-  font-size: 23pt;
+  font-size: 19pt;
 }
 
 h3{
-  font-size: 20pt;
+  font-size: 16pt;
 }
 
 p{
@@ -206,25 +204,17 @@ p{
 	
 @media only screen and (min-width: 1200px) {
 	header{
-  height: 4em;
+  height: 2.5em;
 }
 .rowTwo{
-  margin: 30px 5px 5px 10px;
-}
-    
-h1{
-  font-size: 28pt;
+  margin: 10px 5px 5px 10px;
 }
 
-h2{
-  font-size: 25pt;
+#weatherBoxEarth, #weatherBoxMars{
+  width: 90%;
+  height: 29vh;
 }
-
-h3{
-  font-size: 22pt;
-}
-
-p{
-  font-size: 17pt;
+#map {
+  height: 55vh;
 }
 }
