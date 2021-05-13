@@ -19,7 +19,7 @@ function getAPIdataMars() {
 		document.getElementById('tempMars').innerHTML = responseMars[sol].AT.av + "&#176C";
 
 		
-		document.getElementById('seasonMars').innerHTML = responseMars[sol].Season;
+		//document.getElementById('seasonMars').innerHTML = responseMars[sol].Season;
 		document.getElementById('windMars').innerHTML = responseMars.[sol].WD.most_common;
 
 		
