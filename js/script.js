@@ -15,18 +15,13 @@ function getAPIdataMars() {
 	.then(function(responseMars) {
 		var sol = responseMars.sol_keys[0];
     // Momenteel zijn de sensoren offline. Deze code is wel correct toen het op een andere dag werd getest. 
-
+/*
 		document.getElementById('tempMars').innerHTML = responseMars[sol].AT.av + "&#176C";
-
-		
 		document.getElementById('seasonMars').innerHTML = responseMars[sol].Season;
 		document.getElementById('windMars').innerHTML = responseMars.[sol].WD.most_common;
-
-		
 		document.getElementById('dateMars').innerHTML = responseMars[sol].Last_UTC + ' *';
-
 		document.getElementById('pressureMars').innerHTML = responseMars[sol].PRE.av + ' Pa';
-		
+		*/
 		console.log(responseMars);
 		// test om de response te checken
 
